@@ -6,13 +6,14 @@ public class Solution {
 
       int l = 0;
       int r = array.length - 1;
-      while (l <= r) {
+      while (l <= r) { // l < r is WRONG, eg. a[] = {5} target = 5
         int m = l + (r - l) / 2;
 
         if (array[m] == target) {
             return m;
         } else if (array[m] < target) {
-            l = m + 1;
+            l = m + 1; // l = m; ??? eg. a[] = {5} target = 8
+                       //                      LMR = 0
         } else {
             r = m - 1;
         }
@@ -21,3 +22,5 @@ public class Solution {
       return -1;
   }
 }
+// Time = O(log n)
+// Extra space = O(1)
