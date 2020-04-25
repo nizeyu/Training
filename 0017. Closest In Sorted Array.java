@@ -6,18 +6,27 @@ public class Solution {
 
       int l = 0;
       int r = array.length - 1;
-      while (l + 1 < r) {
+      while (l + 1 < r) { // l neighbors r -> terminate
           int m = l + (r - l) / 2;
 
           if (array[m] == target) {
               return m;
           } else if (array[m] < target) {
-              l = m;
+              l = m; // l = m + 1 wrong
+              1 2 3 8 9 target = 4
+              L   M   R
+                    L R
+            
+              严格递减：index = 0 1 2
+                      L M R
+                        L R
           } else {
-              r = m;
+              r = m; // r = m - 1 wrong
           }
       }
-
+      
+      // Post-processing
+      // check a[l] against target first
       return Math.abs(target - array[l]) <= Math.abs(target - array[r]) ? l : r;
   }
 }
