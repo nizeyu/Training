@@ -15,7 +15,7 @@ public class Solution {
       int r = m * n - 1;
       while(l <= r) {
           int mid = l + (r - l) / 2;
-          int num = matrix[mid/n][mid%n];
+          int num = matrix[mid/n][mid%n]; // map 2D coordinate to 1D coordinate
           
           if (num == target) {
               return new int[]{mid/n, mid%n};
