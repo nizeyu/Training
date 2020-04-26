@@ -1,3 +1,9 @@
+ssssssssssssssssss eeeeeeeee bbbbbbbbbbbbbbbbbbb
+
+Case 1: If input[M] < target ("s"): L = M + 1 // L = M ??? both ok
+Case 2: If input[M] == target ("e"): L = M + 1 // L = M ??? both ok
+Case 3: If input[M] > target ("b"): R = M // R = M - 1 ??? Wrong
+
 public class Solution {
   public int smallestElementLargerThanTarget(int[] array, int target) {
       if (array == null || array.length == 0) {
@@ -17,12 +23,13 @@ public class Solution {
               r = m;
           }
       }
-
-      if (array[l] > target) {
+      
+      // Post processing
+      if (array[l] > target) { // check a[left] against target first
           return l;
       }
 
-      if (array[r] > target) {
+      if (array[r] > target) { // check a[right] against target first
           return r;
       }
 
