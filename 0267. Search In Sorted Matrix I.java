@@ -11,18 +11,18 @@ public class Solution {
       int m = matrix.length;
       int n = matrix[0].length;
       
-      int l = 0;
-      int r = m * n - 1;
-      while(l <= r) {
-          int mid = l + (r - l) / 2;
+      int left = 0;
+      int right = m * n - 1;
+      while(left <= right) {
+          int mid = left + (right - left) / 2;
           int num = matrix[mid/n][mid%n]; // map 2D coordinate to 1D coordinate
           
           if (num == target) {
               return new int[]{mid/n, mid%n};
           } else if (num < target) {
-              l = mid + 1;;
+              left = mid + 1;;
           } else {
-              r = mid - 1;
+              right = mid - 1;
           }
       }
       
