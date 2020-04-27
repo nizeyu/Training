@@ -4,26 +4,26 @@ public class Solution {
           return - 1;
       }
 
-      int l = 0;
-      int r = array.length - 1;
-      while (l + 1 < r) { // if l neighbors r -> terminate
-          int m = l + (r - l) / 2;
+      int left = 0;
+      int right = array.length - 1;
+      while (left + 1 < right) { // if l neighbors r -> terminate
+          int mid = left + (right - left) / 2;
 
-          if (array[m] == target) {
-              l = m; // do not stop here, keep checking to right
-          } else if (array[m] < target ) {
-              l = m + 1;
+          if (array[mid] == target) {
+              left = mid; // do not stop here, keep checking to right
+          } else if (array[mid] < target ) {
+              left = mid + 1;
           } else {
-              r = m - 1;
+              right = mid - 1;
           }
       }
 
-      if (array[r] == target) {
-          return r;
+      if (array[right] == target) {
+          return right;
       }
 
-      if (array[l] == target) {
-          return l;
+      if (array[left] == target) {
+          return left;
       }
 
       return -1;
