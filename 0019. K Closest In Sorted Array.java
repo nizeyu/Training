@@ -43,6 +43,13 @@ public class Solution {
   }
 }
 
+Step 1: run binary search to find L and R  O(log n)
+Step 2: 谁小移谁                            O(k)
+Time = O(log n + k)
+  
+k ~~~~~~~~ n
+500000    1000000
+
 
 // My solution
 public class Solution {
