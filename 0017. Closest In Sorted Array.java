@@ -4,15 +4,15 @@ public class Solution {
           return - 1;
       }
 
-      int l = 0;
-      int r = array.length - 1;
-      while (l + 1 < r) { // l neighbors r -> terminate
-          int m = l + (r - l) / 2;
+      int left = 0;
+      int right = array.length - 1;
+      while (left + 1 < right) { // l neighbors r -> terminate
+          int mid = left + (right - left) / 2;
 
-          if (array[m] == target) {
-              return m;
-          } else if (array[m] < target) {
-              l = m; // l = m + 1 wrong
+          if (array[mid] == target) {
+              return mid;
+          } else if (array[mid] < target) {
+              left = mid; // left = mid + 1 wrong
               1 2 3 8 9 target = 4
               L   M   R
                     L R
@@ -21,21 +21,15 @@ public class Solution {
                       L M R
                         L R
           } else {
-              r = m; // r = m - 1 wrong
+              right = mid; // right = mid - 1 wrong
           }
       }
       
       // Post-processing
       // check a[l] against target first
-      return Math.abs(target - array[l]) <= Math.abs(target - array[r]) ? l : r;
+      return Math.abs(target - array[left]) <= Math.abs(target - array[right]) ? left : right;
   }
 }
-Step 1: run binary search to find L and R  O(log n)
-Step 2: 谁小移谁                            O(k)
-Time = O(log n + k)
-  
-k ~~~~~~~~ n
-500000    1000000
   
 
 
