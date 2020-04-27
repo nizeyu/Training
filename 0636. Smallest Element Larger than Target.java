@@ -10,27 +10,27 @@ public class Solution {
           return - 1;
       }
 
-      int l = 0;
-      int r = array.length - 1;
-      while (l + 1 < r) {
-          int m = l + (r - l) / 2;
+      int left = 0;
+      int right = array.length - 1;
+      while (left + 1 < right) {
+          int mid = left + (right - left) / 2;
 
-          if (array[m] == target) {
-              l = m + 1;
-          } else if (array[m] < target) {
-              l = m + 1;
+          if (array[mid] == target) {
+              left = mid + 1;
+          } else if (array[mid] < target) {
+              left = mid + 1;
           } else {
-              r = m;
+              right = mid;
           }
       }
       
       // Post processing
-      if (array[l] > target) { // check a[left] against target first
-          return l;
+      if (array[left] > target) { // check a[left] against target first
+          return left;
       }
 
-      if (array[r] > target) { // check a[right] against target first
-          return r;
+      if (array[right] > target) { // check a[right] against target first
+          return right;
       }
 
       return -1;
