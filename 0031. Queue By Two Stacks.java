@@ -21,6 +21,7 @@ public class Solution {
     return out.isEmpty() ? null : out.peekFirst();
   }
 
+  // move stack in to stack out
   private void move() {
     if (out.isEmpty()) {
       while (!in.isEmpty()) {
