@@ -11,7 +11,7 @@
  */
 public class Solution {
   public TreeNode search(TreeNode root, int key) {
-    while (root != null) {
+    while (root != null) { // 没必要用cur 指针, 因为是pass-by-value,不会改变原指针的问题。
       if (root.key == key) {
         return root;
       }
