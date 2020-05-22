@@ -9,7 +9,6 @@ public class Solution {
 
     int slow = 0;
     for (int fast = 0; fast < array.length; fast++) {
-      char cur = array[fast];
       if (!set.contains(array[fast])) {
         array[slow++] = array[fast];
       }
