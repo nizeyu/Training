@@ -1,5 +1,11 @@
 public class Solution {
   public boolean isPowerOfTwo(int number) {
+    return ((number & (number - 1)) == 0 && number > 0);
+  }
+}
+
+public class Solution {
+  public boolean isPowerOfTwo(int number) {
     if (number <= 0) {
       return false;
     }
