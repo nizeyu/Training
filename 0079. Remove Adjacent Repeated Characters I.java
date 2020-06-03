@@ -8,7 +8,7 @@ public class Solution {
 
     int slow = 0;
     for (int fast = 0; fast < array.length; fast++) {
-      if (fast == 0 || (fast != 0 && array[fast] != array[fast - 1])) {
+      if (fast == 0 || (fast != 0 && array[fast] != array[slow - 1])) {
         array[slow++] = array[fast];
       }
     }
