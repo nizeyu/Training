@@ -1,3 +1,18 @@
+/* TreeNode result = new TreeNode(Integer.MIN_VALUE): 
+
+go through tree root != null
+
+case 1: root.val < target
+if root.val > result.val
+	result = root;
+root = root.right;
+
+case 2: root.val >= target
+root = root.left
+
+return result.val; 
+*/
+
 /**
  * public class TreeNode {
  *   public int key;
